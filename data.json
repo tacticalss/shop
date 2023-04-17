@@ -1,0 +1,26 @@
+[
+   {
+      "name": "تفنگ تیراندازی",
+      "price": 100000,
+      "image": "https://via.placeholder.com/150",
+      "link": "https://example.com/product1"
+   },
+   {
+      "name": "کلاه تاکتیکی",
+      "price": 200000,
+      "image": "https://via.placeholder.com/150",
+      "link": "https://example.com/product2"
+   },
+   {
+      "name": "ژاکت نظامی",
+      "price": 300000,
+      "image": "https://via.placeholder.com/150",
+      "link": "https://example.com/product3"
+   },
+   {
+      "name": "کفش نظامی",
+      "price": 400000,
+      "image": "https://via.placeholder.com/150",
+      "link": "https://example.com/product4"
+   }
+]
