@@ -128,9 +128,9 @@ padding: 1rem;
 	</footer>
 
    <script>
-	document.addEventListener("contextmenu", function(e){
-    e.preventDefault();
-}, false);
+	document.addEventListener('contextmenu', event => {
+  event.preventDefault();
+});
 
       xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
