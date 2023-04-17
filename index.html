@@ -127,8 +127,9 @@ padding: 1rem;
    <footer>
 		<p>تمامی حقوق این سایت محفوظ است.</p>
 	</footer>
+	<script>
+      const xhttp = new XMLHttpRequest();
 
-   <script>
       xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
             const products = JSON.parse(this.responseText);
@@ -143,7 +144,7 @@ padding: 1rem;
                         <img src="${products[i].image}" alt="${products[i].name}">
                         <h3>${products[i].name}</h3>
                         <p>قیمت: ${products[i].price} تومان</p>
-			<button onclick="window.location.href='${products[i].link}'">خرید این محصول</button>
+                        <button onclick="window.location.href='${products[i].link}'">خرید این محصول</button>
                      </div>
                   </section>
                `;
