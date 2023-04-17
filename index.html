@@ -1,6 +1,7 @@
 <html lang="fa">
 <head>
-	<meta charset="UTF-8" property="og:image" content="thumbnail.jpg">
+	<meta property="og:image" content="thumbnail.jpg">
+
 	<title>فروش محصولات نظامی</title>
 	<style>
 		body {
@@ -128,10 +129,6 @@ padding: 1rem;
 	</footer>
 
    <script>
-	document.addEventListener('contextmenu', event => {
-  event.preventDefault();
-});
-
       xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
             const products = JSON.parse(this.responseText);
