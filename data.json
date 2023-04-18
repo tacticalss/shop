@@ -1,1 +1,32 @@
-[{"name":"تفنگ تیراندازی","price":100000,"image":"https://th.bing.com/th/id/R.e9276d45dadfba3edb05e19f1f5393f5?rik\u003dW0zzbYdrUXxSWw\u0026pid\u003dImgRaw\u0026r\u003d0","link":"https://example.com/product1"},{"name":"کلاه تاکتیکی","price":200000,"image":"https://via.placeholder.com/150","link":"https://example.com/product2"},{"name":"ژاکت نظامی","price":300000,"image":"https://via.placeholder.com/150","link":"https://example.com/product3"},{"name":"کفش نظامی","price":400000,"image":"content://com.android.chrome.FileProvider/images/screenshot/16817963616455894244298414604690.jpg","link":"https://example.com/product4"}]
+[
+  {
+    "name": "DBK© SLD-L2145 (Professional REDPOWER Series) Flashlight\nچراغ قوه ی دی بی کی© مدل اس‌ال‌دی-ال۲۱۴۵ (سری ردپاور)",
+    "price": "۲۱۰،۰۰۰",
+    "image": "https://via.placeholder.com/150",
+    "link": "https://t.me/TACURB/119?single"
+  },
+  {
+    "name": "18 cm Trauma Shears\nقیچی تراما (لیستر) ۱۸ سانتی",
+    "price": "۱۸۰،۰۰۰",
+    "image": "https://via.placeholder.com/150",
+    "link": "https://t.me/TACURB/91?single"
+  },
+  {
+    "name": "کلاهخود PJ فست ایرسافت\nPJ Airsoft Fast Helmet",
+    "price": "۱،۵۰۰،۰۰۰",
+    "image": "https://via.placeholder.com/150",
+    "link": "https://t.me/TACURB/52?single"
+  },
+  {
+    "name": "BENCHMADE® Rescue Cutter\nکاتر طناب امداد بنچ‌مید®",
+    "price": "۳۹۰،۰۰۰",
+    "image": "https://via.placeholder.com/150",
+    "link": "https://t.me/TACURB/48?single"
+  },
+  {
+    "name": "Mechanix Wear® FASTFIT Framer\nدستکش مکانیکس® فست فیت مدل فریمر",
+    "price": "۲۱۰،۰۰۰",
+    "image": "https://via.placeholder.com/150",
+    "link": "https://t.me/TACURB/43?single"
+  }
+]
