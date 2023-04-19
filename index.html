@@ -135,34 +135,11 @@ img {
    </main>
 
    <footer>
-<div id="pageViews">This page has been viewed X times.</div>
+
 		<p>تمامی حقوق این سایت محفوظ است.</p>
 	</footer>
 	<script>
-// Check if the page has been visited before
-if (sessionStorage.getItem("hasVisited") === null) {
-  sessionStorage.setItem("hasVisited", "true");
 
-  // Increase the page views counter
-  if (localStorage.getItem("pageViews") === null) {
-    localStorage.setItem("pageViews", 1);
-  } else {
-    var views = parseInt(localStorage.getItem("pageViews"));
-    views += 1;
-    localStorage.setItem("pageViews", views);
-  }
-} else {
-  // Do nothing since this is a repeat visit
-}
-
-// Display the number of page views on the page
-var viewsDiv = document.getElementById("pageViews");
-viewsDiv.textContent = "This page has been viewed " + localStorage.getItem("pageViews") + " times.";
-
-// Reset the page views after 24 hours
-setTimeout(function() {
-  localStorage.setItem("pageViews", 0);
-}, 24 * 60 * 60 * 1000);
 
       const xhttp = new XMLHttpRequest();
 
