@@ -114,6 +114,20 @@ img {
   height: 150px;
   border-radius: 0;
 }		</style>
+<script>
+// Check if the page has been visited before
+if (localStorage.getItem("pageViews") === null) {
+  localStorage.setItem("pageViews", 1);
+} else {
+  var views = parseInt(localStorage.getItem("pageViews"));
+  views += 1;
+  localStorage.setItem("pageViews", views);
+}
+
+// Display the number of page views on the page
+var viewsDiv = document.getElementById("pageViews");
+viewsDiv.textContent = "This page has been viewed " + localStorage.getItem("pageViews") + " times.";
+</script>
 
 </head>
 <body>
