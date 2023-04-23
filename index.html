@@ -114,9 +114,7 @@ img {
   height: 150px;
   border-radius: 0;
 }
-	.hidden {
-  display: none;
-}
+
 
 	</style>
 
@@ -161,8 +159,8 @@ img {
                      <div class="product">
                         <img src="${products[i].image}" alt="${products[i].name}">
                         <h3>${products[i].name}</h3>
-			<button onclick="this.parentElement.style.display='block';" style="color: blue;">توضیحات محصول</button>
 			<div style="display: none;">${products[i].info}</div>
+			<button onclick="this.parentElement.style.display='block';" style="color: blue;">توضیحات محصول</button>
                         <p>قیمت: ${products[i].price} تومان</p>
                         <button onclick="window.location.href='${products[i].link}'">خرید این محصول</button>
                      </div>
