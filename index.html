@@ -154,26 +154,10 @@ img {
             for (let i = 0; i < products.length; i++) {
                html += `
                   <section>
-		  <script>
-		  const hiddenText = document.querySelector('.hidden');
-
-hiddenText.style.display = 'none';
-
-const showMoreButton = document.querySelector('.show-more');
-
-showMoreButton.addEventListener('click', () => {
-  hiddenText.style.display = 'block';
-});
-</script>
                      <h2>${products[i].header}</h2>
                      <div class="product">
                         <img src="${products[i].image}" alt="${products[i].name}">
                         <h3>${products[i].name}</h3>
-			<div class="hidden">
-  This is my long text.
-</div>
-
-<button class="show-more">Show more</button>
                         <p>قیمت: ${products[i].price} تومان</p>
                         <button onclick="window.location.href='${products[i].link}'">خرید این محصول</button>
                      </div>
