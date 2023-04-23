@@ -143,7 +143,6 @@ img {
 	</footer>
 	<script>
 
-
       const xhttp = new XMLHttpRequest();
 
       xhttp.onreadystatechange = function() {
@@ -159,8 +158,11 @@ img {
                      <div class="product">
                         <img src="${products[i].image}" alt="${products[i].name}">
                         <h3>${products[i].name}</h3>
-			<div style="display: none;">${products[i].info}</div>
-			<button onclick="this.parentElement.style.display='block';" style="color: blue;">توضیحات محصول</button>
+			<div class="hidden">
+  This is my long text.
+</div>
+
+<button class="show-more">Show more</button>
                         <p>قیمت: ${products[i].price} تومان</p>
                         <button onclick="window.location.href='${products[i].link}'">خرید این محصول</button>
                      </div>
@@ -174,6 +176,16 @@ img {
 
       xhttp.open("GET", "data.json", true);
       xhttp.send();
+		const hiddenText = document.querySelector('.hidden');
+
+hiddenText.style.display = 'none';
+
+const showMoreButton = document.querySelector('.show-more');
+
+showMoreButton.addEventListener('click', () => {
+  hiddenText.style.display = 'block';
+});
+
    </script>
 </body>
    </html>
