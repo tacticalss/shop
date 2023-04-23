@@ -154,6 +154,17 @@ img {
             for (let i = 0; i < products.length; i++) {
                html += `
                   <section>
+		  <script>
+		  const hiddenText = document.querySelector('.hidden');
+
+hiddenText.style.display = 'none';
+
+const showMoreButton = document.querySelector('.show-more');
+
+showMoreButton.addEventListener('click', () => {
+  hiddenText.style.display = 'block';
+});
+</script>
                      <h2>${products[i].header}</h2>
                      <div class="product">
                         <img src="${products[i].image}" alt="${products[i].name}">
@@ -176,15 +187,7 @@ img {
 
       xhttp.open("GET", "data.json", true);
       xhttp.send();
-		const hiddenText = document.querySelector('.hidden');
-
-hiddenText.style.display = 'none';
-
-const showMoreButton = document.querySelector('.show-more');
-
-showMoreButton.addEventListener('click', () => {
-  hiddenText.style.display = 'block';
-});
+		
 
    </script>
 </body>
