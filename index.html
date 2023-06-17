@@ -115,19 +115,56 @@ img {
   border-radius: 0;
 }
 .promo-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F1F1F1;
+    padding: 20px;
 }
 
-.promo-content {
-  flex-basis: 100%;
-  text-align: center;
+.promo-wrapper .promo-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.promo-img img {
-  max-width: 100%;
-  height: auto;
+.promo-wrapper .promo-img img {
+    max-width: 100%;
+}
+
+.promo-wrapper .promo-img a.promo-btn-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.promo-wrapper .promo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.promo-wrapper .promo-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.promo-wrapper .promo-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 a {
@@ -197,15 +234,12 @@ a:active, a:focus {
 			<r>
                      </div>
 		      <div class="promo-wrapper" id="promo-g4-solid-color">
-<div class="promo-content">
-<h1>${products[i].header}</h1>
-<div class="button-group">
-<div class="button-wrapper">
+<div class="promo-img"><img src="${products[i].image}" alt="${products[i].name}">
 <a href="/EXP-Venture-Pack" class="promo-btn-light">Shop Now</a>
 </div>
-</div>
-</div>
-<div class="promo-img"><img src="${products[i].image}" alt="${products[i].name}">
+<div class="promo-content">
+<h1>${products[i].name}</h1>
+<p>${products[i].header}</p>
 </div>
 </div>
                   </section>
