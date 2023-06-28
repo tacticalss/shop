@@ -7,26 +7,47 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background-color: #f2f2f2;
     }
 
     header {
-      background-color: #e91e63;
+      background-color: #333;
       color: #fff;
-      padding: 20px 0;
+      padding: 20px;
       text-align: center;
     }
 
     h1 {
+      margin: 0;
+    }
+
+    nav {
+      background-color: #555;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin-right: 20px;
+    }
+
+    nav a {
       color: #fff;
-      font-size: 36px;
-      margin-bottom: 10px;
+      text-decoration: none;
     }
 
     .product-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
       padding: 50px;
       background-color: #fff;
       border-radius: 10px;
@@ -34,34 +55,69 @@
     }
 
     .product-image {
+      width: 40%;
       text-align: center;
     }
 
     .product-image img {
       max-width: 100%;
       height: auto;
-      border: 5px solid #e91e63;
-      border-radius: 5px;
     }
 
     .product-details {
-      width: 100%;
+      width: 55%;
     }
 
     .product-title {
-      font-size: 32px;
-      margin-bottom: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
     }
 
     .product-price {
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 30px;
+      font-size: 24px;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    .product-rating {
+      margin-bottom: 10px;
+    }
+
+    .product-rating .star {
+      color: gold;
+    }
+
+    .rating-count {
+      color: #888;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+
+    .product-social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
     }
 
     .product-description {
-      font-size: 18px;
-      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #555;
+      line-height: 1.5;
     }
 
     .buy-button {
@@ -69,7 +125,7 @@
       color: #fff;
       border: none;
       padding: 15px 30px;
-      font-size: 20px;
+      font-size: 18px;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -79,48 +135,87 @@
       background-color: #c2185b;
     }
 
-    .customer-reviews {
-      margin-top: 30px;
+    .related-products {
+      margin-top: 50px;
     }
 
-    .customer-reviews h3 {
+    .related-products h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .product-list {
+      display: flex;
+      gap: 20px;
+    }
+
+    .newsletter {
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .newsletter h3 {
       font-size: 24px;
       margin-bottom: 10px;
-    }
-
-    .customer-reviews ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .customer-reviews li {
-      margin-bottom: 20px;
-    }
-
-    .review h4 {
-      margin: 0;
       color: #333;
-      font-size: 18px;
     }
 
-    .review p {
-      margin: 5px 0 0;
-      font-size: 16px;
+    .newsletter form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
     }
 
-    footer {
+    .newsletter input[type="email"] {
+      padding: 8px;
+      border: none;
+      outline: none;
+      width: 300px;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .newsletter button[type="submit"] {
       background-color: #e91e63;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .newsletter button[type="submit"]:hover {
+      background-color: #c2185b;
+    }
+
+          footer {
+      background-color: #333;
       color: #fff;
       padding: 20px;
       text-align: center;
-      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to Shop Website!</h1>
+    <h1>Shop Website</h1>
   </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
   <div class="product-container">
     <div class="product-image">
@@ -129,41 +224,43 @@
     <div class="product-details">
       <h2 class="product-title">Product Name</h2>
       <p class="product-price">$99.99</p>
+      <div class="product-rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+        <span class="star">&#9734;</span>
+        <span class="rating-count">(3)</span>
+      </div>
       <div class="product-social">
-        <span>Share:</span>
         <div class="social-icons">
           <img src="facebook-icon.png" alt="Facebook">
           <img src="twitter-icon.png" alt="Twitter">
           <img src="instagram-icon.png" alt="Instagram">
         </div>
+        <button class="buy-button">Buy Now</button>
       </div>
-      <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ligula eu varius ullamcorper.</p>
-      
-      <!-- Customer review section -->
-      <div class="customer-reviews">
-        <h3>Customer Reviews</h3>
-        <ul>
-          <li>
-            <div class="review">
-              <h4>John Doe</h4>
-              <p>Great product! Highly recommended.</p>
-            </div>
-          </li>
-          <li>
-            <div class="review">
-              <h4>Jane Smith</h4>
-              <p>Excellent quality and fast shipping.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <button class="buy-button">Add to Cart</button>
+      <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu purus nec nisl maximus convallis. Duis in luctus lectus. Sed porta felis quis bibendum finibus. Aliquam erat volutpat. Vestibulum mollis massa sed mauris posuere, id faucibus nisi aliquet.</p>
     </div>
   </div>
 
+  <div class="related-products">
+    <h3>Related Products</h3>
+    <div class="product-list">
+      <!-- Display related products here -->
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <h3>Subscribe to our Newsletter</h3>
+    <form>
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
   <footer>
-    &copy; 2023 Shop Website. All rights reserved.
+    <p>&copy; 2023 Shop Website. All rights reserved.</p>
   </footer>
 </body>
 </html>
