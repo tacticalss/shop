@@ -7,25 +7,26 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f2f2f2;
+      background-color: #f9f9f9;
     }
 
     header {
-      background-color: #333;
+      background-color: #e91e63;
       color: #fff;
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
     }
 
     h1 {
-      margin: 0;
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 10px;
     }
 
     .product-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
       padding: 50px;
       background-color: #fff;
       border-radius: 10px;
@@ -33,36 +34,34 @@
     }
 
     .product-image {
-      width: 40%;
       text-align: center;
     }
 
     .product-image img {
       max-width: 100%;
       height: auto;
+      border: 5px solid #e91e63;
+      border-radius: 5px;
     }
 
     .product-details {
-      width: 55%;
+      width: 100%;
     }
 
     .product-title {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #333;
+      font-size: 32px;
+      margin-bottom: 15px;
     }
 
     .product-price {
-      font-size: 24px;
-      color: #e91e63;
-      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 30px;
     }
 
     .product-description {
-      margin-bottom: 30px;
-      color: #555;
-      line-height: 1.5;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
     .buy-button {
@@ -70,7 +69,7 @@
       color: #fff;
       border: none;
       padding: 15px 30px;
-      font-size: 18px;
+      font-size: 20px;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -80,30 +79,12 @@
       background-color: #c2185b;
     }
 
-    .product-social {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .social-icons img {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons img:hover {
-      transform: scale(1.2);
-    }
-
     footer {
-      background-color: #333;
+      background-color: #e91e63;
       color: #fff;
       padding: 20px;
       text-align: center;
+      font-size: 14px;
     }
   </style>
 </head>
