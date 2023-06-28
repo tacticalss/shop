@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
-  <title>Shop Website - Product Page</title>
+	<meta property="og:image" content="https://i.ibb.co/3WDdWwk/thumbnail.jpg">
+
+	<title>فروش محصولات نظامی</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -216,14 +218,27 @@
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
+  <main></main>
+<script>
 
-  <div class="product-container">
+      const xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            const products = JSON.parse(this.responseText);
+
+            let html = '';
+
+            for (let i = 0; i < products.length; i++) {
+               html += `
+                  <section>
+                     <div class="product-container">
     <div class="product-image">
-      <img src="product-image.jpg" alt="Product Image">
+      <img src="${products[i].image}" alt="Product Image">
     </div>
     <div class="product-details">
-      <h2 class="product-title">Product Name</h2>
-      <p class="product-price">$99.99</p>
+      <h2 class="product-title">${products[i].name}</h2>
+      <p class="product-price">${products[i].price}</p>
       <div class="product-rating">
         <span class="star">&#9733;</span>
         <span class="star">&#9733;</span>
@@ -238,11 +253,24 @@
           <img src="twitter-icon.png" alt="Twitter">
           <img src="instagram-icon.png" alt="Instagram">
         </div>
-        <button class="buy-button">Buy Now</button>
+        <button class="buy-button">خرید محصول</button>
       </div>
       <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu purus nec nisl maximus convallis. Duis in luctus lectus. Sed porta felis quis bibendum finibus. Aliquam erat volutpat. Vestibulum mollis massa sed mauris posuere, id faucibus nisi aliquet.</p>
     </div>
   </div>
+                  </section>
+               `;
+            }
+
+            document.querySelector('main').innerHTML = html;
+         }
+      };
+
+      xhttp.open("GET", "data.json", true);
+      xhttp.send();
+		
+
+   </script>
 
   <div class="related-products">
     <h3>Related Products</h3>
