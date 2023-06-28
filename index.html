@@ -154,7 +154,9 @@ img {
                html += `
                   <section>
                      <h2>${products[i].header}</h2>
-                     <div class="product" style="background-image: url(${products[i].image}); background-repeat: no-repeat;">
+                     <div class="product" style="background-image: url(${products[i].image});
+  background-repeat: no-repeat;
+  object-fit: cover;">
                         <h3>${products[i].name}</h3>
                         <p>قیمت: ${products[i].price} تومان</p>
                         <button onclick="window.location.href='${products[i].link}'">خرید این محصول</button>
