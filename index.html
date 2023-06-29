@@ -289,6 +289,32 @@ input[type="submit"]:focus {
 
   /* استایل‌های دیگر برای نمایش دسکتاپ */
 }
+.search-wrapper {
+  position: relative;
+}
+
+#search-input {
+  padding-right: 30px; /* جابجایی متن داخل input به سمت چپ */
+}
+
+#search-input:focus + button {
+  color: #ff0000; /* تغییر رنگ آیکون سرچ هنگامی که input فعال شود */
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.fa-search:before {
+  content: "\f002"; /* کد آیکون سرچ (نیاز به استفاده از کتابخانه آیکون) */
+}
 
   </style>
 </head>
@@ -306,9 +332,12 @@ input[type="submit"]:focus {
     </ul>
   </nav>
 	<form id="search-form">
-      <input type="text" id="search-input" placeholder="Search products...">
-      <input type="submit" value="Search">
-    </form>
+  <div class="search-wrapper">
+    <input type="text" id="search-input" placeholder="Search products...">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </div>
+</form>
+
 	<script>
 const xhttp = new XMLHttpRequest();
 let products = [];
