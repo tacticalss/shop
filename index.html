@@ -212,6 +212,7 @@
     color: inherit;
   }
 	#search-form {
+		top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,12 +264,12 @@ input[type="submit"]:focus {
       <li><a href="#">Products</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
-	    <form id="search-form">
+    </ul>
+  </nav>
+	<form id="search-form">
       <input type="text" id="search-input" placeholder="Search products...">
       <input type="submit" value="Search">
     </form>
-    </ul>
-  </nav>
 	<script>
 const xhttp = new XMLHttpRequest();
 let products = [];
