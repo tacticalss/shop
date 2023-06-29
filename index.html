@@ -211,6 +211,27 @@
     text-decoration: none;
     color: inherit;
   }
+	  #search-form {
+    display: flex;
+    align-items: center;
+  }
+
+  #search-input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    width: 200px;
+    border-radius: 5px 0 0 5px;
+  }
+
+  #search-submit {
+    background-color: #e91e63;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
@@ -224,60 +245,85 @@
       <li><a href="#">Products</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
+	    <form id="search-form">
+  <input type="text" id="search-input" placeholder="Search products...">
+  <input type="submit" value="Search">
+</form>
+
     </ul>
   </nav>
   <main></main>
 <script>
+  const searchForm = document.getElementById('search-form');
+  const searchInput = document.getElementById('search-input');
+  const productList = document.querySelector('.product-list');
 
-      const xhttp = new XMLHttpRequest();
+  const xhttp = new XMLHttpRequest();
 
-      xhttp.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-            const products = JSON.parse(this.responseText);
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const products = JSON.parse(this.responseText);
 
-            let html = '';
+      searchForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
 
-            for (let i = 0; i < products.length; i++) {
-               html += `
-                  <section>
-                     <div class="product-container">
-    <div class="product-image">
-      <img src="${products[i].image}" alt="Product Image">
-    </div>
-    <div class="product-details">
-      <h2 class="product-title">${products[i].name}</h2>
-      <p class="product-price">${products[i].price}</p>
-      <div class="product-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9734;</span>
-        <span class="star">&#9734;</span>
-        <span class="rating-count">(3)</span>
-      </div>
-      <div class="product-social">
-        <div class="social-icons">
-          <a href="https://t.me/TACURB/">
-  <img src="https://www.androidcloob.com/wp-content/uploads/telegram-1-100x100.png" alt="telegram">
-</a>
-</div>
-        <button class="buy-button" onclick="window.location.href='${products[i].link}'">خرید محصول</button>
-      </div>
-      <p class="product-description">....</div>
-  </div>
-                  </section>
-               `;
-            }
+        const searchTerm = searchInput.value.trim();
 
-            document.querySelector('main').innerHTML = html;
-         }
-      };
+        // Perform search operation
+        if (searchTerm !== '') {
+          const filteredProducts = products.filter(product => {
+            return product.name.toLowerCase().includes(searchTerm.toLowerCase());
+          });
 
-      xhttp.open("GET", "data.json", true);
-      xhttp.send();
-		
+          displaySearchResults(filteredProducts);
+        }
+      });
 
-   </script>
+      function displaySearchResults(searchResults) {
+        let html = '';
+
+        for (const product of searchResults) {
+          html += `
+            <section>
+              <div class="product-container">
+                <div class="product-image">
+                  <img src="${product.image}" alt="Product Image">
+                </div>
+                <div class="product-details">
+                  <h2 class="product-title">${product.name}</h2>
+                  <p class="product-price">${product.price}</p>
+                  <div class="product-rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="rating-count">(3)</span>
+                  </div>
+                  <div class="product-social">
+                    <div class="social-icons">
+                      <a href="https://t.me/TACURB/">
+                        <img src="https://www.androidcloob.com/wp-content/uploads/telegram-1-100x100.png" alt="telegram">
+                      </a>
+                    </div>
+                    <button class="buy-button" onclick="window.location.href='${product.link}'">خرید محصول</button>
+                  </div>
+                  <p class="product-description">....</div>
+                </div>
+              </div>
+            </section>
+          `;
+        }
+
+        productList.innerHTML = html;
+      }
+    }
+  };
+
+  xhttp.open("GET", "data.json", true);
+  xhttp.send();
+</script>
+
 
   <div class="related-products">
     <h3>Related Products</h3>
