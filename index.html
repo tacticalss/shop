@@ -296,14 +296,15 @@ input[type="submit"]:focus {
 }
 
 #search-input {
-  padding-right: 30px; /* جابجایی متن داخل input به سمت چپ */
+  padding-right: 30px;
 }
 
-#search-input:focus + button {
-  color: #ff0000; /* تغییر رنگ آیکون سرچ هنگامی که input فعال شود */
+#search-input:focus + .search-button i,
+.search-button:hover i {
+  color: #ff0000;
 }
 
-.fa-search {
+.search-button {
   position: absolute;
   top: 50%;
   right: 5px;
@@ -312,10 +313,18 @@ input[type="submit"]:focus {
   border: none;
   cursor: pointer;
   font-size: 16px;
+  padding: 0;
+}
+
+.search-button i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .fa-search:before {
-  content: "\f002"; /* کد آیکون سرچ (نیاز به استفاده از کتابخانه آیکون) */
+  content: "\f002";
 }
 
   </style>
@@ -336,9 +345,12 @@ input[type="submit"]:focus {
 	<form id="search-form">
   <div class="search-wrapper">
     <input type="text" id="search-input" placeholder="Search products...">
-    <button type="submit"><i class="fa fa-search"></i></button>
+    <button type="submit" class="search-button">
+      <i class="fa fa-search"></i>
+    </button>
   </div>
 </form>
+
 
 	<script>
 const xhttp = new XMLHttpRequest();
