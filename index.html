@@ -252,30 +252,68 @@
 
     </ul>
   </nav>
-	<script>function displaySearchResults(searchResults) {
-  let html = '';
+	<script>const xhttp = new XMLHttpRequest();
 
-  for (const product of searchResults) {
-    html += `
-      <section>
-        <div class="product-container">
-          <div class="product-image">
-            <img src="${product.image}" alt="Product Image">
-          </div>
-          <div class="product-details">
-            <h2 class="product-title">${product.name}</h2>
-            <p class="product-price">${product.price}</p>
-            <!-- Other product details -->
-          </div>
-        </div>
-      </section>
-    `;
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    const products = JSON.parse(this.responseText);
+
+    document.getElementById("search-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      const searchTerm = document.getElementById("search-input").value.toLowerCase();
+      const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm));
+
+      let html = '';
+
+      for (let i = 0; i < filteredProducts.length; i++) {
+        html += `
+          <section>
+            <div class="product-container">
+              <div class="product-image">
+                <img src="${filteredProducts[i].image}" alt="Product Image">
+              </div>
+              <div class="product-details">
+                <h2 class="product-title">${filteredProducts[i].name}</h2>
+                <p class="product-price">${filteredProducts[i].price}</p>
+                <div class="product-rating">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  <span class="star">&#9734;</span>
+                  <span class="rating-count">(3)</span>
+                </div>
+                <div class="product-social">
+                  <div class="social-icons">
+                    <a href="https://t.me/TACURB/">
+                      <img src="https://www.androidcloob.com/wp-content/uploads/telegram-1-100x100.png" alt="telegram">
+                    </a>
+                  </div>
+                  <button class="buy-button" onclick="window.location.href='${filteredProducts[i].link}'">خرید محصول</button>
+                </div>
+                <p class="product-description">....</div>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      document.querySelector('.search').innerHTML = html;
+    });
   }
+};
 
-  productList.innerHTML = html;
-}
+xhttp.open("GET", "data.json", true);
+xhttp.send();
+
 </script>
-	<div class="product-list"></div>
+
+<main>
+  <div class="search"></div> 
+</main>
+
+
   <main></main>
 <script>
 const xhttp = new XMLHttpRequest();
