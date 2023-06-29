@@ -249,6 +249,45 @@ input[type="submit"]:hover {
 input[type="submit"]:focus {
   outline: none;
 }
+#microscope-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+#microscope-image {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#search-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#search-input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+#search-form input[type="submit"] {
+  padding: 5px 10px;
+}
 
   </style>
 </head>
@@ -263,14 +302,37 @@ input[type="submit"]:focus {
       <li><a href="#">Products</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
-	    <form id="search-form">
-  <input type="text" id="search-input" placeholder="Search products...">
-  <input type="submit" value="Search">
-</form>
+	    <div id="microscope-container">
+  <img id="microscope-image" src="path_to_empty_microscope_image.jpg" alt="Microscope" onclick="showAnimation()" />
+  <div id="particle">
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Search products...">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+</div>
+
 
     </ul>
   </nav>
-	<script>const xhttp = new XMLHttpRequest();
+	<script>
+		function showAnimation() {
+  var particle = document.getElementById("particle");
+  particle.style.display = "block";
+}
+
+document.getElementById("search-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  // Perform your search logic here
+  
+  // Hide the particle (form) after the search is performed
+  var particle = document.getElementById("particle");
+  particle.style.display = "none";
+});
+
+		
+		const xhttp = new XMLHttpRequest();
 let products = [];
 
 xhttp.onreadystatechange = function() {
