@@ -252,38 +252,44 @@ input[type="submit"]:focus {
   outline: none;
 }
 @media only screen and (max-width: 768px) {
-	    /* استایل‌هایی که فقط در صفحه‌های با عرض کمتر از 768 پیکسل نمایش داده می‌شوند */
-	    body {
-	      font-size: 14px;
-	    }
+  /* استایل‌هایی که فقط در صفحه‌های با عرض کمتر از 768 پیکسل نمایش داده می‌شوند */
+  body {
+    font-size: 14px;
+  }
 
-	    .product-container {
-	      flex-direction: column;
-	      padding: 20px;
-	    }
+  .product-container {
+    flex-direction: column;
+    padding: 20px;
+  }
 
-	    .product-image {
-	      width: 100%;
-	      margin-bottom: 20px;
-	    }
+  .product-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-	    .product-details {
-	      width: 100%;
-	    }
-	  }
+  .product-details {
+    width: 100%;
+  }
+}
 
-	  @media only screen and (max-width: 480px) {
-	    /* استایل‌هایی که فقط در صفحه‌های با عرض کمتر از 480 پیکسل نمایش داده می‌شوند */
-	    .product-title {
-	      font-size: 22px;
-	    }
+@media only screen and (min-width: 769px) {
+  /* استایل‌هایی که فقط در صفحه‌های با عرض بیشتر از 768 پیکسل نمایش داده می‌شوند */
+  .product-container {
+    flex-direction: row;
+    padding: 40px;
+  }
 
-	    .product-price {
-	      font-size: 18px;
-	    }
+  .product-title {
+    font-size: 24px;
+  }
 
-	    /* استایل‌های دیگر برای ریسپانسیو شدن در گوشی‌ها */
-	  }
+  .product-price {
+    font-size: 20px;
+  }
+
+  /* استایل‌های دیگر برای نمایش دسکتاپ */
+}
+
   </style>
 </head>
 <body>
