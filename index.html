@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
 	<meta property="og:image" content="https://i.ibb.co/3WDdWwk/thumbnail.jpg">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 	<title>فروش محصولات نظامی</title>
   <style>
@@ -50,8 +50,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
-      padding: 20px;
+      margin-top: 50px;
+      padding: 50px;
       background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -71,14 +71,14 @@
     }
 
     .product-title {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       margin-bottom: 10px;
       color: #333;
     }
 
     .product-price {
-      font-size: 20px;
+      font-size: 24px;
       color: #e91e63;
       margin-bottom: 20px;
     }
@@ -126,8 +126,8 @@
       background-color: #e91e63;
       color: #fff;
       border: none;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 15px 30px;
+      font-size: 18px;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -138,18 +138,17 @@
     }
 
     .related-products {
-      margin-top: 20px;
+      margin-top: 50px;
     }
 
     .related-products h3 {
-      font-size: 20px;
+      font-size: 24px;
       margin-bottom: 20px;
       color: #333;
     }
 
     .product-list {
       display: flex;
-      flex-wrap: wrap;
       gap: 20px;
     }
 
@@ -160,7 +159,7 @@
     }
 
     .newsletter h3 {
-      font-size: 20px;
+      font-size: 24px;
       margin-bottom: 10px;
       color: #333;
     }
@@ -169,67 +168,123 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top:20px;
+      margin-top: 10px;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 8px;
+      border: none;
+      outline: none;
+      width: 300px;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .newsletter button[type="submit"] {
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .newsletter button[type="submit"]:hover {
+      background-color: #c2185b;
+    }
+
+          footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+	  img {
+  width: 300px;
+  height: 250px;
+  border-radius: 5%;
+}
+	   a {
+    text-decoration: none;
+    color: inherit;
+  }
+	#search-form {
+		top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.newsletter input[type="email"] {
+#search-input {
   padding: 10px;
-  border-radius: 5px;
+  width: 300px;
   border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-.newsletter button[type="submit"] {
-  background-color: #e91e63;
-  color: #fff;
+#search-input:focus {
+  outline: none;
+  border-color: dodgerblue;
+  box-shadow: 0 0 5px dodgerblue;
+}
+
+input[type="submit"] {
+  background-color: dodgerblue;
+  color: white;
   border: none;
   padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 4px;
   font-size: 16px;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.newsletter button[type="submit"]:hover {
-  background-color: #c2185b;
+input[type="submit"]:hover {
+  background-color: deepskyblue;
 }
 
-@media screen and (max-width: 768px) {
-  .product-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-image {
-    width: 80%;
-  }
-
-  .product-details {
-    width: 80%;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav li {
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .newsletter form {
-    flex-direction: column;
-  }
-
-  .newsletter input[type="email"],
-  .newsletter button[type="submit"] {
-    width: 100%;
-  }
+input[type="submit"]:focus {
+  outline: none;
 }
+@media only screen and (max-width: 768px) {
+	    /* استایل‌هایی که فقط در صفحه‌های با عرض کمتر از 768 پیکسل نمایش داده می‌شوند */
+	    body {
+	      font-size: 14px;
+	    }
 
-</style>
+	    .product-container {
+	      flex-direction: column;
+	      padding: 20px;
+	    }
+
+	    .product-image {
+	      width: 100%;
+	      margin-bottom: 20px;
+	    }
+
+	    .product-details {
+	      width: 100%;
+	    }
+	  }
+
+	  @media only screen and (max-width: 480px) {
+	    /* استایل‌هایی که فقط در صفحه‌های با عرض کمتر از 480 پیکسل نمایش داده می‌شوند */
+	    .product-title {
+	      font-size: 22px;
+	    }
+
+	    .product-price {
+	      font-size: 18px;
+	    }
+
+	    /* استایل‌های دیگر برای ریسپانسیو شدن در گوشی‌ها */
+	  }
+  </style>
 </head>
 <body>
   <header>
